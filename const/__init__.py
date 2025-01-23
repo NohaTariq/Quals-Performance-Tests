@@ -1,0 +1,1 @@
+from const.companiesData import CERTIFICATES, TRADES
