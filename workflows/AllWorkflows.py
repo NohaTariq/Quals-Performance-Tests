@@ -7,4 +7,4 @@ from tasks.RetrievingCompaniesWithFilters import RetrievingCompaniesWithFilters
 class RetrievingCompaniesScenario(FastHttpUser):
     host = os.getenv("BASE_URL")  # Read from .env file
     tasks = [RetrievingCompanies, RetrievingCompaniesWithFilters]  # Weight tasks by their occurrence
-    wait_time = between(1, 3)
+    wait_time = between(1,3)

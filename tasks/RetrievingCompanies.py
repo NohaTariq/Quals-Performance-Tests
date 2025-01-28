@@ -1,8 +1,10 @@
 from locust import task
+from dotenv import load_dotenv
 from tasks.Auth import Auth
 
+
 class RetrievingCompanies(Auth):
-    @task
+    @task(1)
     def get_companies(self):
         """Task to get the list of companies."""
         # Use the full URL for the GET request

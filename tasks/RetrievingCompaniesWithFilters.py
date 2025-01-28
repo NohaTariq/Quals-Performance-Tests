@@ -12,15 +12,15 @@ class RetrievingCompaniesWithFilters(Auth):
             filterString += f"&filters[{key}]={filter}"
         return filterString
 
-    @task
+    @task(1)
     def get_companies_with_filters(self):
         filters = {
             "trades": "architectural_concrete",
             "certifications": "Certified Business Enterprise (CBE)"
         }
         full_url = f"""qualifications/rest/v1.0/companies?per_page=50&page=1
-        {RetrievingCompaniesWithFilters.addFilters('certifications',random.sample(CERTIFICATES, 3))}
-        {RetrievingCompaniesWithFilters.addFilters('trades',random.sample(TRADES, 3))}"""
+        {RetrievingCompaniesWithFilters.addFilters('certifications',random.sample(CERTIFICATES, 1))}
+        {RetrievingCompaniesWithFilters.addFilters('trades',random.sample(TRADES, 1))}"""
         headers = {
             "Authorization": f"Bearer {self.token}"
         }
