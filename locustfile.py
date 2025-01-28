@@ -12,7 +12,7 @@ def main():
     subprocess.run([
         "locust",
         "-f", "workflows/AllWorkflows.py",  # Point to the file containing user classes
-        "-u", "3",  # Total number of users
+        "-u", "50",  # Total number of users
         "-r", "1",  # Hatch rate (users per second)
         "--run-time", "20s",  # Total runtime (2 minutes)
     ])
