@@ -31,5 +31,6 @@ class RetrievingCompaniesWithFilters(Auth):
         else:
             print("Failed to retrieve companies: {}".format(response.text))
             print(response.status_code)
+            print(response.message)
 
     
