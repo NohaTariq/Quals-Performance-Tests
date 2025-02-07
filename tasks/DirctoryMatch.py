@@ -1,5 +1,6 @@
 from locust import task, between
 from tasks.Auth import Auth
+from const import companiesData
 import requests
 import json
 
@@ -11,19 +12,18 @@ class matchAPI(Auth):
             "Authorization": f"Bearer {self.token}",
             "Content-Type": "application/json"
         }
-        #vendor Ids to be passed to the post request
-        data={"vendor_ids":["598134328938336", "598134329279859", "598134326667633", "598134326667665","598134326667672"]}
-       
 
+        # Create the JSON payload
+        payload = {
+           "vendor_ids": (companiesData.Vendor_Ids)
+        }     
         # Make the POST request
-        response = self.client.post(full_url, headers=headers,data=json.dumps(data))
+        response = self.client.post(full_url, headers=headers,json=(payload))
 
         # Check if the response is successful
-        if response.status_code == 200:
+        if response.status_code == 201:
             print("Successfully matched companies by CCD.")
         else:
             print("Failed to match companies: {}".format(response.text))
-            print("Response Code: {}".format(response.status_code))
-            print("Response Headers: {}".format(response.headers))
-
+            #print("Response Code: {}".format(response.status_code))
         
