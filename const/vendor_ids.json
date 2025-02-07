@@ -1,20 +1,5 @@
-CERTIFICATES = ["Certified Aboriginal Business (CAB)",
-                      "Certified Business Enterprise (CBE)",
-                      "Minority Business Enterprise (MBE)",
-                      "Women's Business Enterprise (WBE)"
-                     ]
-
-    #Should probably choose 10 of these for performance
-TRADES = [
-                "3d_capture_scanning",
-                "abatement_and_remediation",
-                "above_grade_vapor_retarders",
-                "access_and_barriers",
-                "access_control",
-     
-             ]
-
-Vendor_Ids = [
+{
+    "vendor_ids": [
         "598134328938336",
         "598134329279859",
         "598134326667633",
@@ -55,3 +40,4 @@ Vendor_Ids = [
         "32132533",
         "598134327035287"
     ]
+}
