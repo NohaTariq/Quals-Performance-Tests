@@ -11,7 +11,8 @@ class RetrievingCompanies(Auth):
 
         full_url = f"qualifications/rest/v1.0/companies?per_page=50&page=1"
         headers = {
-            "Authorization": f"Bearer {self.token}"
+            "Authorization": f"Bearer {self.token}",
+            "Procore-Company-Id": '42'
         }
         response = self.client.get(full_url, headers=headers)
 
